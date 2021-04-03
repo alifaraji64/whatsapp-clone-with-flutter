@@ -29,59 +29,77 @@ class NavigationBar extends StatelessWidget {
               },
             ),
             Expanded(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Center(
-                    child: Text(
-                      'CHATS',
-                      style: TextStyle(
-                        color: currentRoute == '/'
+              child: GestureDetector(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Center(
+                      child: Text(
+                        'CHATS',
+                        style: TextStyle(
+                          color: currentRoute == '/chats'
+                              ? Colors.greenAccent[400]
+                              : Colors.grey[300],
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    border: BorderDirectional(
+                      bottom: BorderSide(
+                        width: 5,
+                        color: currentRoute == '/chats'
                             ? Colors.greenAccent[400]
-                            : Colors.grey[300],
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
+                            : Colors.blueGrey[800],
                       ),
                     ),
                   ),
                 ),
-                decoration: BoxDecoration(
-                  border: BorderDirectional(
-                    bottom: BorderSide(
-                      width: 5,
-                      color: Colors.greenAccent[400],
-                    ),
-                  ),
-                ),
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/chats',
+                  );
+                },
               ),
             ),
             Expanded(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Center(
-                    child: Text(
-                      'STATUS',
-                      style: TextStyle(
+              child: GestureDetector(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Center(
+                      child: Text(
+                        'STATUS',
+                        style: TextStyle(
+                          color: currentRoute == '/status'
+                              ? Colors.greenAccent[400]
+                              : Colors.grey[300],
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    border: BorderDirectional(
+                      bottom: BorderSide(
+                        width: 5,
                         color: currentRoute == '/status'
                             ? Colors.greenAccent[400]
-                            : Colors.grey[300],
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
+                            : Colors.blueGrey[800],
                       ),
                     ),
                   ),
                 ),
-                decoration: BoxDecoration(
-                  border: BorderDirectional(
-                    bottom: BorderSide(
-                      width: 5,
-                      color: currentRoute == '/status'
-                          ? Colors.greenAccent[400]
-                          : Colors.blueGrey[800],
-                    ),
-                  ),
-                ),
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/status',
+                  );
+                },
               ),
             ),
             Expanded(

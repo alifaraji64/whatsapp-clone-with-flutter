@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/calls/call_screen.dart';
 import 'package:whatsapp_clone/screens/chats/chat_screen.dart';
+import 'package:whatsapp_clone/screens/single-chat/single_chat_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,11 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      //home: ChatScreen(),
-      initialRoute: '/',
+      home: ChatScreen(),
+      initialRoute: '/chats',
       routes: {
-        '/': (context) => ChatScreen(),
-        '/calls': (context) => CallsScreen()
+        '/chats': (context) => ChatScreen(),
+        '/calls': (context) => CallsScreen(),
+        '/single-chat': (context) => SingleChatScreen()
       },
     );
   }
